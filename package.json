@@ -1,0 +1,29 @@
+{
+  "name": "@w-shao/closeport",
+  "version": "1.1.7",
+  "description": "关闭指定端口",
+  "private": false,
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "close:port": "node index.js"
+  },
+  "bin": {
+    "close:port": "index.js"
+  },
+  "keywords": [
+    "端口",
+    "关闭端口",
+    "关闭端口的工具",
+    "port",
+    "close:port",
+    "close-port"
+  ],
+  "author": "wangsx",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
