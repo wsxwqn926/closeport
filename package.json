@@ -1,7 +1,7 @@
 {
   "name": "@w-shao/closeport",
-  "version": "1.1.19",
-  "description": "关闭指定端口",
+  "version": "1.1.32",
+  "description": "端口管理",
   "private": false,
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "w-port": "./index.js"
   },
   "keywords": [
+    "端口管理",
     "端口",
     "关闭端口",
     "关闭端口的工具",
