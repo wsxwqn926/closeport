@@ -7,9 +7,9 @@ npm i @w-shao/closeport -g
 
 ### Compiles and hot-reloads for development
 ```
-close:port
+w-port close <prot>
 ```
 ### 更新到最新版
 ```
-npm i styled-components@latest
+npm i @w-shao/closeport@latest -g
 ```

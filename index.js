@@ -1,18 +1,19 @@
 #! /usr/bin/env node
+const program = require('commander');
+const requiredPackageVersion = require('./package.json').version;
 const { exec } = require('child_process');
-const readline = require('readline');
 const chalk = require('chalk');
+const error = chalk.bold.red;
 
-const rl = readline.createInterface({
-    input: process.stdin,
-});
-console.info(chalk[color](str));
-    console.log('');
-console.log(`\x1b[1m\x1b[31m 请输入要终止的端口号： \x1b[0m`)
-rl.question(`Please enter the port `, (port) => {
+program.version(requiredPackageVersion, '-v, --vers', 'output the current version')
+  .usage('<command> [options]');
+
+program.command('close <port>')
+  .description('关闭指定端口')
+  .action((port, cmd) => {
     exec('netstat -aon| findstr "80"', [], (err, stdout) => {
         if (err) {
-            console.log(err);
+            console.log('\n error:',error(JSON.stringify(err)));
             return;
         }
 
@@ -25,18 +26,18 @@ rl.question(`Please enter the port `, (port) => {
                 let id = item[item.length - 1];
                 exec(`taskkill  -F -PID ${id}`, [], (err) => {
                     if (err) {
-                        console.error('error:', err);
+                        console.error('\n error:', error(JSON.stringify(err)));
                         return;
                     }
-                    console.log(`\x1b[1m\x1b[31m 已成功终止端口 ${port} \x1b[0m`)
+                    console.log(chalk.green("\n success：已成功终止端口"))
                 })
                 break;
             }
         }
         if (falg) {
-            console.log(`\x1b[1m\x1b[31m 未检测到端口 ${port} \x1b[0m`)
+            console.log(chalk.yellow("\n error：未检测到端口"))
         }
     })
-    rl.close()
+  });
 
-});
+  program.parse(process.argv);
