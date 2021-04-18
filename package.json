@@ -1,6 +1,6 @@
 {
   "name": "@w-shao/closeport",
-  "version": "1.1.32",
+  "version": "1.2.12",
   "description": "端口管理",
   "private": false,
   "main": "index.js",
@@ -14,7 +14,8 @@
     "端口管理",
     "端口",
     "关闭端口",
-    "关闭端口的工具",
+    "终止端口",
+    "占用端口",
     "port",
     "close:port",
     "close-port"

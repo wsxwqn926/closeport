@@ -14,7 +14,7 @@ program.command('close <port>')
     require('./bin/closePort.js')(port)
   });
 
-program.command('ls')
+program.command('ls [port]')
   .description('查看端口列表')
   .action((port, cmd) => {
     require('./bin/ls.js')(port)
